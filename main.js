@@ -10,7 +10,7 @@ getRandomPhoto().catch(error => {
     console.log(error);
 });
 
-//fetching from the api
+// //fetching from the api
 async function getRandomPhoto() {
     const response = await fetch(baseUrl);
     console.log("Response:", response);
