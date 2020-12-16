@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Shadows+Into+Light&display=swap');
 
 body {
-    background-color: #eadcde;
-    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
     /* background-color: #eadcde;
-    background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png"); */
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png"); */
+    background-color: #eadcde;
+    background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png");
     background-attachment: fixed;
 }
 
@@ -17,11 +17,11 @@ body {
 
 .project-header {
     font-family: 'Shadows Into Light', cursive;
-    color: rgb(65, 77, 125);
+    color: whitesmoke;
     opacity: 80%;
     margin-top: 1rem;
     text-align: center;
-    text-shadow: -2px 1px 2px #414d7d;
+    text-shadow: -2px 4px 5px black;
 }
 
 .container {
@@ -41,8 +41,9 @@ body {
 
 .author-name {
     font-family: 'Raleway', sans-serif;
-    color: rgb(65, 77, 125);
-    opacity: 80%;
-    font-size: 3rem;
+    color: whitesmoke;
+    opacity: 60%;
+    font-size: 2rem;
     margin-top: .7rem;
+    text-shadow: -2px 4px 5px black;
 }
