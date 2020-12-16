@@ -1,37 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Shadows+Into+Light&display=swap');
+
 body {
-    /* background-color: #eadcde;
-    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png"); */
     background-color: #eadcde;
-    background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png");
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    /* background-color: #eadcde;
+    background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png"); */
     background-attachment: fixed;
 }
 
-.project-header {
-    color: whitesmoke;
-    margin-top: 1rem;
-    text-align: center;
-    text-shadow: -2px 4px 5px black;
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* .carousel-inner {
-    max-height: 80vh;
-} */
+.project-header {
+    font-family: 'Shadows Into Light', cursive;
+    color: rgb(65, 77, 125);
+    opacity: 80%;
+    margin-top: 1rem;
+    text-align: center;
+    text-shadow: -2px 1px 2px #414d7d;
+}
 
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .photo {
-    width: 100%;
+    width: 80%;
     height: auto;
-    box-shadow:20px 20px 10px grey;
-    margin-top: 3rem;  
+    box-shadow: 20px 20px 10px grey;
+    margin-top: 3rem;
+    border: 15px double lightgray;
 }
 
 .author-name {
-    color: white;
-    font-size: 2rem;
-    margin-top: .6rem;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(65, 77, 125);
+    opacity: 80%;
+    font-size: 3rem;
+    margin-top: .7rem;
 }

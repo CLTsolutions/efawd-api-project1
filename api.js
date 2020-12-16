@@ -1,40 +1,47 @@
-//getting a random number for 'page' in url.
-let pageNum = Math.floor(Math.random() * 15);
-
 //api url
-const baseUrl = `https://picsum.photos/v2/list?page=${pageNum}&limit=005`;
-// const baseUrl = `https://picsum.photos/id/${randomNum}/info`;
+const baseUrl = 'https://picsum.photos/v2/list?page=09&limit=100';
 
 //html elements
 const section = document.querySelector('div');
+const button = document.querySelector('.btn');
 
-//calling my function and handling potential errors
-getRandomPhoto().catch(error => {
-    console.log('This is an error.');
-    console.log(error);
-});
-
+//fetching from the api
 async function getRandomPhoto() {
-    const response = await fetch(baseUrl);
-    console.log("Response:", response);
-    const json = await response.json();
-    console.log('JSON:', json);
-    return displayResults(json);
+    section.innerHTML = '';
+
+    try {
+        const response = await fetch(baseUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        } else {
+            console.log("Response:", response);
+            const json = await response.json();
+            console.log('JSON:', json);
+            return displayResults(json);
+        }
+    } catch(e) {
+        console.log('This is an error.');
+        console.log(e);
+    }
 };
 
+//printing results to page
 function displayResults(json) {
-    json.forEach(photo => {
-        section.classList.add('container');
+    let randomNum = Math.floor(Math.random() * (json.length - 0 ) + 0);
+    let photo = json[randomNum];
 
-        let image = document.createElement('img');
-        image.classList.add('photo'); //for css styling
-        image.src = photo.download_url;
-        image.alt = photo.download_url
-        section.appendChild(image);
+    section.classList.add('container'); //for bootstrap styling
 
-        let author = document.createElement('p');
-        author.classList.add('author-name'); // for css
-        author.textContent = photo.author;
-        section.appendChild(author);
-    });
+    let image = document.createElement('img');
+    image.classList.add('photo');
+    image.src = photo.download_url;
+    image.alt = photo.download_url;
+    section.appendChild(image);
+
+    let author = document.createElement('p');
+    author.classList.add('author-name');
+    author.textContent = photo.author;
+    section.appendChild(author);
 }
+
+button.addEventListener('click', getRandomPhoto);
